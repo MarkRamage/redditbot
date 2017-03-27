@@ -10,7 +10,7 @@ socket.connect("tcp://10.68.0.61:5555")
 
 input_message = input("Enter a word to be sent: ")
 
-print("Sending request %s ..." % request)
+print("Sending request %s ...")
 socket.send_string("Hello Server" + input_message)
 # get reply
 message = socket.recv_string()
