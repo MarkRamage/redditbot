@@ -18,7 +18,7 @@ while True:
     print("Recieved request: %s" % message)
     comments = ""
     for comment in reddit.inbox.messages():
-        comments += (comment.body.encode("utf-8")) + "\n"
+        comments += (comment.body) + "\n"
         
 
     #send replay back to client
