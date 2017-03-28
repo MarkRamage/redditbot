@@ -6,7 +6,7 @@ context = zmq.Context()
 
 print("Connecting to hello world Server")
 socket = context.socket(zmq.REQ)
-socket.connect("tcp://localhost:5555")
+socket.connect("tcp://10.68.0.1:5555")
 
 
 
