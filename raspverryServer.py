@@ -42,6 +42,7 @@ def run():
                 subreddit = reddit.subreddit(sub)
                 reply += "\n\n/r/"+sub
                 for topic in subreddit.new(limit = 3):
+                    newTopic = "".join([i for i in topic.title if i.isalpha()])
                     reply +="\n    " + topic.title
                     
         else:

@@ -7,7 +7,7 @@ context = zmq.Context()
 def run():
     print("Connecting to hello world Server")
     socket = context.socket(zmq.REQ)
-    socket.connect("10.68.0.185:5555")
+    socket.connect("tcp://10.68.0.185:5555")
     running = True
     question = input("Please enter your request for the server: ")
     print("Sending request")
