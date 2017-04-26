@@ -2,14 +2,19 @@ import time
 import zmq
 import praw
 
+try:
+    file = open("login.txt", "r")
+except IOError:
+    print("1: File does not exist")
+    
 context = zmq.Context()
 socket = context.socket(zmq.REP)
 socket.bind("tcp://*:5555")
-reddit = praw.Reddit(client_id='h_P0QRHoG1dhZQ',
-                     client_secret='d49gcG3H3uFbQXUKnvGiNE9DesM',
-                     password='ramagema',
-                     user_agent='testscript by Mark Ramage',
-                     username='MarkRamageVanderbilt')
+reddit = praw.Reddit(client_id=file.readline().rstrip(),
+                     client_secret=file.readline().rstrip(),
+                     password=file.readline().rstrip(),
+                     user_agent=file.readline().rstrip(),
+                     username=file.readline().rstrip())
 print(reddit.user.me())
 
 def run():
