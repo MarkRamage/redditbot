@@ -10,8 +10,7 @@ socket = context.socket(zmq.REQ)
 # socket talks to server
 def run():
     print("Connecting to hello world Server")
-    #socket.connect("tcp://10.68.0.185:5555")
-    socket.connect("tcp://localhost:5555")
+    socket.connect("tcp://10.68.0.185:5555")
     socket.RCVTIMEO = 5000 
     running = True
     question = input("Please enter your request for the server: ")
@@ -75,8 +74,7 @@ def socket_restart():
     global socket
     socket.close()
     socket = context.socket(zmq.REQ)
-    #socket.connect("tcp://10.68.0.185:5555")
-    socket.connect("tcp://localhost:5555")
+    socket.connect("tcp://10.68.0.185:5555")
     socket.RCVTIMEO = 5000
 
 if  __name__ == "__main__":
